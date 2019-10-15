@@ -14,7 +14,24 @@ class Mainscreen extends StatelessWidget {
               flex: 3,
               child: Padding(
                 padding: EdgeInsets.all(20.0),
-                child: CardContainer(),
+                child: CardContainer(
+                   children: <Widget>[
+                     SizedBox(height: 40,),
+                      Text("Copenhagen", style: TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold) ,),
+                      Text("Denmark | Zealand", style: TextStyle(fontSize: 15.0, color: Colors.black),),
+                      SizedBox(height: 20,),
+                      Text("12°C", style: TextStyle(fontSize: 30.0, color: Colors.black, fontWeight: FontWeight.bold),),
+                      SizedBox(height: 20.0,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(" 71% |", style: TextStyle(fontSize: 20.0, color: Colors.black),),
+                          Text(" 33 km/h |", style: TextStyle(fontSize: 20.0, color: Colors.black),),
+                          Text(" 1009 mb ", style: TextStyle(fontSize: 20.0, color: Colors.black),),
+                        ],
+                      ),
+                    ],
+                ),
               ),
             ),
             Expanded(
@@ -22,7 +39,11 @@ class Mainscreen extends StatelessWidget {
               child: Padding(
                   padding:
                       EdgeInsets.only(left: 20.0, right: 20.0, bottom: 40.0),
-                  child: CardContainer()),
+                  child: CardContainer(
+                    children: <Widget>[
+                      Text("Pollution data", style: TextStyle(color: Colors.black),)
+                    ],
+                  )),
             ),
             Container(
               child: Padding(
