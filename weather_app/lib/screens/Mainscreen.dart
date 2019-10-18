@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/widgets/CardContainer.dart';
+import 'package:weather_app/widgets/ChooseLocationPopUp.dart';
 
 class Mainscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // Back ground gif
+      // decoration: BoxDecoration(
+      //   image: DecorationImage(
+      //       image: AssetImage("assets/rain.gif"), fit: BoxFit.fill),
+      // ),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: Center(
@@ -173,7 +179,10 @@ class Mainscreen extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 20.0),
                     child: FloatingActionButton(
                       child: Icon(Icons.add),
-                      onPressed: () {},
+                      onPressed: () {
+                        ChooseLocationPopUp.createChooseLocationPupUp(
+                            context: context);
+                      },
                     ),
                   ),
                   Padding(
