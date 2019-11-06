@@ -5,6 +5,7 @@ import 'package:weather_app/widgets/ChooseLocationPopUp.dart';
 class Mainscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //TODO: There could be a 'general left right padding' on the entire screen..
     return Container(
       // Back ground gif
       // decoration: BoxDecoration(
@@ -23,7 +24,7 @@ class Mainscreen extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+                padding: EdgeInsets.symmetric(/*vertical: 20.0,*/ horizontal: 40.0),
                 child: CardContainer(
                   children: <Widget>[
                     SizedBox(
@@ -72,8 +73,10 @@ class Mainscreen extends StatelessWidget {
                         )
                       ],
                     ),
+
+                    //TODO: No need for additional spacing of the screen size is less then 1024..
                     SizedBox(
-                      height: 80,
+                      height: 40,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,13 +101,15 @@ class Mainscreen extends StatelessWidget {
               ),
             ),
             //MID SECTION
+            SizedBox(height: 20.0,),
             Expanded(
               flex: 2,
-              child: Padding(
-                  padding:
-                      EdgeInsets.only(left: 40.0, right: 40.0, bottom: 40.0),
+              //TODO: Check if the screen size is smaller then 1024px. Screensize > 1024 == no top down padding : padding all 
+              // child: Padding(
+              //     padding:
+              //         EdgeInsets.only(left: 40.0, right: 40.0, bottom: 40.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       CardContainer(
                         width: 150,
@@ -169,7 +174,8 @@ class Mainscreen extends StatelessWidget {
                         ],
                       ),
                     ],
-                  )),
+                  //)
+                  ),
             ),
             //BOTTOM SECTION
             Container(
@@ -180,6 +186,7 @@ class Mainscreen extends StatelessWidget {
                     child: FloatingActionButton(
                       child: Icon(Icons.add),
                       onPressed: () {
+                        print("Screen height debug:" + MediaQuery.of(context).size.height.toString());
                         ChooseLocationPopUp.createChooseLocationPupUp(
                             context: context);
                       },
